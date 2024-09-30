@@ -1,6 +1,6 @@
 # AI Group Research Project: Chatbot Arena Human Preference Predictions
 
-Welcome to the GitHub repository for the **Chatbot Arena Human Preference Predictions** project! This project is focused on building a machine learning model that can predict human preferences between responses from two Large Language Models (LLMs). The project is part of the **LMSYS - Chatbot Arena Human Preference Predictions** competition.
+This project is focused on building a machine learning model that can predict human preferences between responses from two Large Language Models (LLMs). The project is part of the **LMSYS - Chatbot Arena Human Preference Predictions** competition.
 
 ## 🧠 **Project Brief**
 

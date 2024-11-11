@@ -1,52 +1,87 @@
-# AI Group Research Project: Chatbot Arena Human Preference Predictions
+# LLM Response Preference Prediction System
 
-This project is focused on building a machine learning model that can predict human preferences between responses from two Large Language Models (LLMs). The project is part of the **LMSYS - Chatbot Arena Human Preference Predictions** competition.
+A machine learning system for predicting human preferences between LLM-generated responses, developed as part of the LMSYS Chatbot Arena Competition.
 
-## 🧠 **Project Brief**
+## Overview
 
-The primary goal of this project is to develop a model that accurately predicts which LLM-generated response a human judge will prefer. We will explore different machine learning techniques, including **supervised learning** and **reinforcement learning from human feedback (RLHF)**. Additionally, we aim to address and mitigate common biases like verbosity and position bias in the responses.
+This project develops advanced ML models to predict which LLM-generated response a human evaluator would prefer. We leverage supervised learning and RLHF techniques while addressing common biases in language model outputs.
 
-## 📅 **Project TODO**
+### Key Features
 
-Here is a brief list of the tasks that need to be completed to implement this project:
+- Processing of 55K+ conversational pairs
+- BERT/RoBERTa-based contextual embeddings
+- Bias mitigation for position and verbosity
+- RLHF implementation using PPO
+- Comprehensive evaluation framework
 
-1. **Data Collection and Preprocessing:**
-   - [ ] Load the competition dataset (55K rows of conversational data).
-   - [ ] Implement data augmentation techniques (synonym replacement, paraphrasing, position shuffling).
-   - [ ] Ensure proper data split between training and testing sets.
+## Technical Implementation
 
-2. **Feature Engineering:**
-   - [ ] Extract contextual embeddings using **BERT** or **RoBERTa**.
-   - [ ] Create additional features, such as response length, sentiment score, and word overlap.
+### Data Pipeline
+- Large-scale dataset processing (55K conversations)
+- Advanced augmentation techniques:
+  - Synonym replacement
+  - Contextual paraphrasing
+  - Position-aware shuffling
+- Robust train/test splitting
 
-3. **Model Training (Supervised Learning):**
-   - [ ] Implement different classifiers: Random Forest, Gradient Boosting, and Transformer-based models.
-   - [ ] Train models using supervised learning to predict the preferred response.
+### Model Architecture
+- Feature Engineering:
+  - BERT/RoBERTa embeddings extraction
+  - Multi-modal feature integration
+  - Response metrics computation
+- Training Methods:
+  - Ensemble of classical ML (Random Forest, GBM)
+  - Transformer-based neural networks
+  - PPO-based RLHF fine-tuning
 
-4. **Bias Mitigation:**
-   - [ ] Implement techniques to reduce verbosity, position, and self-enhancement biases.
-   - [ ] Evaluate the effect of bias mitigation on model performance.
+### Bias Mitigation
+- Position bias reduction
+- Verbosity normalization
+- Self-enhancement correction
+- Performance impact analysis
 
-5. **Reinforcement Learning from Human Feedback (RLHF):**
-   - [ ] Fine-tune the model using **Proximal Policy Optimization (PPO)** for RLHF.
-   - [ ] Train the reward model to optimize alignment with human preferences.
+## Evaluation Framework
 
-6. **Evaluation:**
-   - [ ] Evaluate the model's performance using **log loss** as the primary metric.
-   - [ ] Track bias metrics to ensure fair prediction of human preferences.
-   - [ ] Conduct ablation studies to identify the most effective methods.
+- Primary Metric: Log Loss
+- Bias Assessment Metrics
+- Ablation Studies
+- Real-time Performance Tracking
 
-7. **Final Testing and Results:**
-   - [ ] Test the model on the competition dataset.
-   - [ ] Store results and share visualizations of key metrics.
+## Technical Requirements
 
-## 📝 **Next Steps**
+- Python 3.8+
+- Key Libraries:
+  - PyTorch
+  - Transformers
+  - scikit-learn
+  - Ray
+  - Weights & Biases
 
-- Set up a Python environment with all necessary dependencies.
-- Begin with data collection and preprocessing.
-- Establish the baseline models with supervised learning techniques.
-- Iterate and refine the approach using RLHF and bias mitigation.
+## Development Roadmap
 
----
+1. Environment Setup & Data Pipeline
+2. Baseline Model Development
+3. RLHF Integration
+4. Bias Mitigation Implementation
+5. Evaluation & Optimization
+6. Competition Submission
 
-Stay tuned for updates as we progress through the project!
+## Getting Started
+
+```bash
+# Clone repository
+git clone https://github.com/anudeepadi/Chatbot-Arena-Human-Preference-Predictions.git
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run baseline training
+python src/train.py --config configs/baseline.yaml
+
+# Execute RLHF fine-tuning
+python src/rlhf_train.py --model baseline --epochs 10
+```
+
+## Project Status
+
+Currently implementing core model architecture and data processing pipeline. Contributions welcome for bias mitigation strategies and RLHF implementation.
